@@ -1,0 +1,11 @@
+<h3>Edit User</h3>
+ 
+ <%= form_for @user, :url => {:action => "update"} do |i| %>
+   Name         : <%= i.text_field :name, :value=> @user.name %><br />
+   Email        : <%= i.text_field :email %><br />
+   Address      : <%= i.text_field :address %><br />
+   Phone Number : <%= i.text_field :phonenumber %><br />
+   Birthday     : <%= i.text_field :birthday %><br />
+   Gender       : <%= i.text_field :gender %><br />
+   <%= i.submit "Save" %>
+ <% end %>

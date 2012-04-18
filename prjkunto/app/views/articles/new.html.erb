@@ -1,0 +1,10 @@
+     <h3>Page New Article </h3>
+     <%= form_for @article, :url => {:action => "create"} do |n| %>
+       <%= n.label :title %>
+       <%= n.text_field :title %><br />
+       
+       <%= n.label :body %>
+       <%= n.text_area :body %><br />
+
+       <%= n.submit "Save"%>
+     <% end %>

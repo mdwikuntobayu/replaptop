@@ -1,0 +1,11 @@
+<h3>New Category </h3>
+<%= form_for @category, :url => {:action => "create"} do |n| %>
+  <%= n.label :name %>
+  <%= n.text_field :name %><br />
+     
+  <%= n.label :parent_id %>   
+  <%= n.text_field :parent_id %><br />
+
+  <%= n.submit "Save"%>
+  <%= link_to "Back", categories_path %>
+<% end %>

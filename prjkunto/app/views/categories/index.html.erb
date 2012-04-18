@@ -1,0 +1,46 @@
+<div>
+  <% if current_user == nil %>
+    <hr />
+    <h4>Listing Categories </h4> 
+    <hr />
+    <br /><br />
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Parent ID</th>
+      </tr>
+      <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.parent_id %></td>
+        <td><%= link_to 'Show', category_path(category.id) %></td>
+      </tr>
+      <% end %>
+    </table> 
+  <% else %>
+    <hr />
+    <h4>Listing Categories </h4> 
+    <hr />
+    <% if current_user.is_admin? %>
+      <%= link_to 'New Categories', new_category_path %>
+    <% else %>
+      &nbsp;
+    <% end %>
+    <br /><br />
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Parent ID</th>
+      </tr>
+      <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.parent_id %></td>
+        <td><%= link_to 'Show', category_path(category.id) %></td>
+        <td><%= link_to 'Edit', edit_category_path(category.id) %></td>
+      <td><%= link_to 'Delete', category_path(category.id), :confirm => 'are you sure?', :method => :delete %></td>
+      </tr>
+      <% end %>
+    </table> 
+  <% end %>
+</div>

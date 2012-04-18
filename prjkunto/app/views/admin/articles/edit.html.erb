@@ -1,0 +1,7 @@
+<h1>Page edit article in view folder</h1>
+ 
+ <%= form_for @article, :url => {:action => "update"} do |i| %>
+   Title : <%= i.text_field :title, :value=> @article.title %><br />
+   Body  : <%= i.text_area :body %><br />
+           <%= i.submit "Save" %>
+ <% end %>

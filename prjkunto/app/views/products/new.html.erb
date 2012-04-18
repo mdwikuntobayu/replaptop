@@ -1,0 +1,19 @@
+<h3>New Products </h3>
+<%= form_for @product, :url => {:action => "create"} do |n| %>
+  <%= n.label :name %>
+  <%= n.text_field :name %><br />
+       
+  <%= n.label :description %>
+  <%= n.text_field :description %><br />
+
+  <%= n.label :price %>
+  <%= n.text_field :price %><br />  
+
+  <%= n.label :weight %>
+  <%= n.text_field :weight %><br />
+  
+  <%= n.label :category_id %>
+  <%= n.text_field :category_id %><br />
+
+  <%= n.submit "Save"%>
+<% end %>

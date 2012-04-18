@@ -1,0 +1,17 @@
+<h1>Page Index article in view folder</h1>
+<h3>Input NEW Article <%= link_to 'Klik Here', new_article_path %></h3> 
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.body %></td>
+      <td><%= link_to 'Show', admin_article_path(article.id) %></td>
+      <td><%= link_to 'Edit', edit_admin_article_path(article.id) %></td>
+      <td><%= link_to 'Delete', admin_article_path(article.id), :confirm => 'are you sure?', :method => :delete %></td>
+    </tr>
+      <% end %>
+  </table> 

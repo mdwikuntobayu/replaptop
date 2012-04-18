@@ -1,0 +1,7 @@
+<h3>Edit Category</h3>
+ 
+ <%= form_for @category, :url => {:action => "update"} do |i| %>
+   Name         : <%= i.text_field :name, :value=> @category.name %><br />
+   Parent ID    : <%= i.text_field :parent_id %><br />
+   <%= i.submit "Save" %>
+ <% end %>

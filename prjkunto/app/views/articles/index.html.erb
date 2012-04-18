@@ -1,0 +1,44 @@
+
+<div>
+  <% if current_user == nil %>
+    <hr />
+    <h4>Listing Article </h4> 
+    <hr />
+
+    <br /><br />
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+      <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td><%= link_to 'Show', article_path(article.id) %></td>
+      </tr>
+      <% end %>
+    </table>  
+  <% else %>
+    <hr />
+    <h4>Listing Article </h4> 
+    <hr />
+
+    <br /><br />
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+      <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td><%= link_to 'Show', article_path(article.id) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article.id) %></td>
+      <td><%= link_to 'Delete', article_path(article.id), :confirm => 'are you sure?', :method => :delete %></td>
+      </tr>
+      <% end %>
+    </table>   
+  <% end %>
+</div>

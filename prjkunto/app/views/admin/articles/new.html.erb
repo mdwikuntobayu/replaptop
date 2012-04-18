@@ -1,0 +1,10 @@
+     <h1>Page New article In view folder</h1>
+     <%= form_for @article, :url => {:action => "create"} do |n| %>
+       <%= n.label :title %>
+       <%= n.text_field :title %><br />
+       
+       <%= n.label :body %>
+       <%= n.text_field :body %><br />
+
+       <%= n.submit "Save"%>
+     <% end %>

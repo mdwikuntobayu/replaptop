@@ -8,7 +8,7 @@
 
 users = User.create([ {:email => "user@email.com", :password_hash => "", :password_salt => "", :name => "user", :address => "bandung", :phonenumber => "007", :birthday => "01/01/2012", :gender => "0", :facebook => "user@mail.com", :blog => "user.bloger.spot"}, {:email => "user@email.com", :password_hash => "", :password_salt => "", :name => "user", :address => "bandung", :phonenumber => "007", :birthday => "01/01/2012", :gender => "0", :facebook => "user@mail.com", :blog => "user.bloger.spot"}, {:email => "user@email.com", :password_hash => "", :password_salt => "", :name => "user", :address => "bandung", :phonenumber => "007", :birthday => "01/01/2012", :gender => "0", :facebook => "user@mail.com", :blog => "user.bloger.spot"} ])
 
-categories = Category.create([ {:name => "Automotive"}, {:name => "Car", :parent_id => "1"} ])
+categories = Category.create([ {:name => "Automotive"}, {:name => "Car", :parent_id => "1"}, {:name => "Car 2", :parent_id => "2"} ])
 
 products = Product.create([ {:name => "Kijang", :description => "Car Family", :price => "6000", :weight => "545", :user_id => "1", :category_id => "1"}, {:name => "Panter", :description => "Car Adventure", :price => "7000", :weight => "700", :user_id => "1", :category_id => "1"}, {:name => "Eagle", :description => "City Car", :price => "3400", :weight => "232", :user_id => "2", :category_id => "1"} ])
 

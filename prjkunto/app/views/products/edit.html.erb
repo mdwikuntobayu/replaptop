@@ -1,0 +1,9 @@
+<h3>Edit Products</h3>
+<%= form_for @product, :url => {:action => "update"} do |i| %>
+  Name : <%= i.text_field :name, :value=> @product.name %><br />
+  Description  : <%= i.text_field :description %><br />
+  Price : <%= i.text_field :price %><br />
+  Weight : <%= i.text_field :weight %><br />
+  Category ID : <%= i.text_field :category_id %><br />
+  <%= i.submit "Save" %>
+<% end %>

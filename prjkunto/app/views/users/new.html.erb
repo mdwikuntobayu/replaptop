@@ -1,0 +1,65 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phonenumber %><br />
+    <%= f.text_field :phonenumber %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+   <p>
+    <%= f.label :birthday %><br />
+    <%= f.text_field :birthday %>
+  </p>
+   <p>
+    <%= f.label :gender %><br />
+    <%= f.radio_button :gender, true %>Male
+    <%= f.radio_button :gender, false %>Female
+
+    <!--<%= f.text_field :gender %>-->
+  </p>
+   <p>
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </p>
+   <p>
+    <%= f.label :blog %><br />
+    <%= f.text_field :blog %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= recaptcha_tags %>
+  </p>
+  <p class="button">
+    <%= f.submit %>
+  </p>
+<% end %>
+
+

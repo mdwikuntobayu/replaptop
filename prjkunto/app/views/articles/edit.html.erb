@@ -1,0 +1,7 @@
+<h3>Edit Article</h3>
+ 
+ <%= form_for @article, :url => {:action => "update"} do |i| %>
+   Title : <%= i.text_field :title, :value=> @article.title %><br />
+   Body  : <%= i.text_area :body %><br />
+           <%= i.submit "Save" %>
+ <% end %>
